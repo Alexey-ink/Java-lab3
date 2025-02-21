@@ -22,7 +22,7 @@ public class Main {
             car.start();
         }
 
-        System.out.println("\n🚦 Все машины готовы. Светофор включается!");
+        System.out.println("\nВсе машины готовы. Светофор включается!");
         startSignal.countDown();
 
 
@@ -34,6 +34,6 @@ public class Main {
             }
         }
 
-        System.out.println("\n🚦 Все машины проехали. Bye-bye! ");
+        System.out.println("\nВсе " + mainTrafficLight.getTotalPassedCars() + " машины проехали. Bye-bye! ");
     }
 }

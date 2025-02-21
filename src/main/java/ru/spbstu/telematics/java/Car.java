@@ -31,7 +31,7 @@ public class Car implements Runnable{
     public void run() {
         try {
             startSignal.await(); // Ждём команды на старт
-            System.out.println(Thread.currentThread().getName() + " 🚗 Подъехала машина, направление: " + direction);
+            System.out.println(Thread.currentThread().getName() + " - Подъехала машина, направление: " + direction);
             trafficLight.passThroughIntersection(direction);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
