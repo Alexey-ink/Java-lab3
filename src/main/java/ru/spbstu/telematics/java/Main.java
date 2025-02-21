@@ -25,7 +25,6 @@ public class Main {
         System.out.println("\nВсе машины готовы. Светофор включается!");
         startSignal.countDown();
 
-
         for (Thread thread : carThreads) {
             try {
                 thread.join();

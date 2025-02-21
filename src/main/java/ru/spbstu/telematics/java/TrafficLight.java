@@ -7,9 +7,7 @@ public class TrafficLight {
 
     private final Semaphore semaphore = new Semaphore(2, true);
     private final Map<Direction, Integer> carsQueue = new ConcurrentHashMap<>();
-    private final Queue<Direction> waitingQueue = new ConcurrentLinkedQueue<>();
     private final Set<Direction> activeDirections = ConcurrentHashMap.newKeySet();
-    private final CyclicBarrier barrier = new CyclicBarrier(2);
     private final Object lock = new Object();
 
     private int passedCars = 0;
@@ -22,7 +20,6 @@ public class TrafficLight {
 
     public void incrementQueue(Direction direction) {
         carsQueue.put(direction, carsQueue.get(direction) + 1);
-        waitingQueue.offer(direction);
     }
 
     public synchronized void incrementPassedCars() {

@@ -30,7 +30,7 @@ public class Car implements Runnable{
     @Override
     public void run() {
         try {
-            startSignal.await(); // Ждём команды на старт
+            startSignal.await();
             System.out.println(Thread.currentThread().getName() + " - Подъехала машина, направление: " + direction);
             trafficLight.passThroughIntersection(direction);
         } catch (InterruptedException e) {
